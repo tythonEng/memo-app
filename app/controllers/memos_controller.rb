@@ -6,12 +6,13 @@ class MemosController < ApplicationController
 
   def create
     Memo.create(memo_params)
-    redirect_to :root
+    @memos = Memo.all
+  end
+
   end
 
   private
   def memo_params
     params.require(:memo).permit(:text)
   end
-
 end
