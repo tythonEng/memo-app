@@ -1,14 +1,38 @@
-<!DOCTYPE html>
-<html>
-<head>
+<!DOCTYPE html "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
   <title>MemoApp</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <title>Google Maps JavaScript API サンプル</title>
+    <script type="text/javascript"
+      src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript" src="initialize.js"></script>
 
-<%= yield %>
+  </head>
 
-</body>
+
+  <body onload="init_google_map()">
+  <body onload="onInit()">
+    <div id="msg">現在計測中...</div>
+  </body>
+  <script type="text/javascript">
+    var d = new Date();
+    document.write(d.toLocaleString());
+  </script>
+    <%= yield %>
+    <p>Google Maps APIを使ったサンプルです。</p>
+
+    <div id="map_canvas" style="width:800px; height:600px"></div>
+
+
+
+
+
+  </body>
 </html>
+
+
