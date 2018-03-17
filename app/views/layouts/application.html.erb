@@ -10,12 +10,8 @@
     <title>Google Maps JavaScript API サンプル</title>
     <script type="text/javascript"
       src="http://maps.google.com/maps/api/js?sensor=false"></script>
-    <script type="text/javascript" src="initialize.js"></script>
-
   </head>
 
-
-  <body onload="init_google_map()">
   <body onload="onInit()">
     <div id="msg">現在計測中...</div>
   </body>
@@ -24,15 +20,26 @@
     document.write(d.toLocaleString());
   </script>
     <%= yield %>
-    <p>Google Maps APIを使ったサンプルです。</p>
-
-    <div id="map_canvas" style="width:800px; height:600px"></div>
+    <p>Google Maps APIを使ったサンプル</p>
 
 
+  <body>
+      <div id="map_canvas" style="width:800px; height:600px"></div>
+    <script type="text/javascript">
+      var map = init_google_map();
+      var iw_latlng2 = new google.maps.LatLng(34.960371, 137.062688);
+      var infowindow2 = new google.maps.InfoWindow({
+        content: '復路：aaaaa',
+        position: iw_latlng2,
+        zIndex: 2
+      });
+      infowindow2.open(map);
+    </script>
+</body>
 
 
 
-  </body>
+
 </html>
 
 

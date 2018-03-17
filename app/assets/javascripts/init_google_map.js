@@ -24,5 +24,5 @@ function init_google_map() {
   });
 
   infowindow2.open(map);
-
+  return map;
 }
