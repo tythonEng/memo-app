@@ -19,14 +19,12 @@
   <body onload="onInit()">
     <div id="msg">現在計測中...</div>
   </body>
-  <script type="text/javascript">
-    var d = new Date();
-    document.write(d.toLocaleString());
-  </script>
-    <%= yield %>
+
+  <%= yield %>
 
   <body>
       <div id="map_canvas" style="width:800px; height:600px"></div>
+
 <!--     <script type="text/javascript">
       var map = init_google_map();
       var iw_latlng2 = new google.maps.LatLng(34.960371, 137.062688);
